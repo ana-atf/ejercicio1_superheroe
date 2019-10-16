@@ -18,36 +18,36 @@ en blanco correspondiente por defecto.
 *IMPORTANTE* Crear un repo de git solamente para este proyecto, a parte de los otros repos de git que tenéis. */
 
 
-
-
 let titulos_masculino = ["Boy", "Man", "Man", "Man", "Man", "Guy", "Mr.", "Doctor" , "El", "Professor", "Captain", "Agent", "The", "The", "The", "The", "Lord", "Sgt.", "General"];
-const titulos_femenino = ["Girl", "Woman", "Woman", "Woman", "Woman", "Gal", "Miss", "Doctor", "Professor", "Captain", "Agent", "The", "The", "The", "Sgt.", "General"];
+let titulos_femenino = ["Girl", "Woman", "Woman", "Woman", "Woman", "Gal", "Miss", "Doctor", "Professor", "Captain", "Agent", "The", "The", "The", "Sgt.", "General"];
 let adjetivos = ["Imperial", "Amazing", "Spectular", "Dino", "Massive", "Fantastic", "Wonder", "Techno", "Electro", "Hydro", "Giant", "Super", "Incredi", "Daring", "Mega", "Tiny", "Red", "Dark", "Orange", "Screaming", "Green", "Teal", "Blue", "Golden", "Fearless", "Great", "Ameri", "Pyro", "Robo", "American", "Cyber", "Frozen"]
 let sustantivos = ["Spider", "Laser", "Microbe", "Spectre", "Scan", "Badger", "Lighting", "Thunder", "Eagle", "Hurricane", "Storm", "Typhoon", "Fire", "Flame", "Flash", "Night", "Whirlwind", "Wind", "Dawn", "Light", "Dragon", "Wolf", "Vemon", "Cobra", "Viper", "Condor", "Stalker", "Panther", "Puma", "Shadow", "Freeze", "Night", "Hammer", "Mist", "Tulip", "Octopus", "Inferno", "Magma", "Patriot", "Stag", "Rhino", "Mole", "Sloth"]
     
-let nombre1 = Math.round(Math.random()* titulos_masculino.length -1);   
-let nombre2 = Math.round(Math.random()* titulos_femenino.length -1);
-let nombre3 = Math.round(Math.random()* adjetivos.length -1);
-let nombre4 = Math.round(Math.random()* sustantivos.length -1);
-
 
 function masculino() {
-    document.querySelectorAll("input")[0].value = "Mi nombre es" + titulos_masculino[nombre1] + " " + adjetivos[nombre3] + " " + sustantivos[nombre4];
+    let nombre1 = Math.round(Math.random()* titulos_masculino.length -1);   
+    let nombre2 = Math.round(Math.random()* adjetivos.length -1);
+    let nombre3 = Math.round(Math.random()* sustantivos.length -1);
+    document.querySelectorAll("input")[0].value = `${titulos_masculino[nombre1]} ${adjetivos[nombre2]} ${sustantivos[nombre3]}`;
     document.cookie = `username = ${document.querySelectorAll("input")[0].value}`;
     return true
 }
 
 function femenino() {
-    document.querySelectorAll("input")[0].value ="Mi nombre es" + titulos_femenino[nombre2] + " " + adjetivos[nombre3] + " " + sustantivos[nombre4];
+    let nombre1 = Math.round(Math.random()* titulos_femenino.length -1);
+    let nombre2 = Math.round(Math.random()* adjetivos.length -1);
+    let nombre3 = Math.round(Math.random()* sustantivos.length -1);
+    document.querySelectorAll("input")[0].value = `${titulos_masculino[nombre1]} ${adjetivos[nombre2]} ${sustantivos[nombre3]}`;
     document.cookie = `username = ${document.querySelectorAll("input")[0].value}`;
     return true
 }
 
-let botonM = document.querySelectorAll("body > button")[0]
+
+let botonM = document.querySelectorAll("button")[0]
 botonM.addEventListener("click", masculino)    
 
 
-let botonF = document.querySelectorAll("body > button")[1]
+let botonF = document.querySelectorAll("button")[1]
 botonF.addEventListener("click", femenino)
 
 
