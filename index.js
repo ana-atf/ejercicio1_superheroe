@@ -25,19 +25,19 @@ let sustantivos = ["Spider", "Laser", "Microbe", "Spectre", "Scan", "Badger", "L
     
 
 function masculino() {
-    let nombre1 = Math.round(Math.random()* titulos_masculino.length -1);   
-    let nombre2 = Math.round(Math.random()* adjetivos.length -1);
-    let nombre3 = Math.round(Math.random()* sustantivos.length -1);
+    let nombre1 = Math.round(Math.random()* (titulos_masculino.length -1));   
+    let nombre2 = Math.round(Math.random()* (adjetivos.length -1));
+    let nombre3 = Math.round(Math.random()* (sustantivos.length -1));
     document.querySelectorAll("input")[0].value = `${titulos_masculino[nombre1]} ${adjetivos[nombre2]} ${sustantivos[nombre3]}`;
     document.cookie = `username = ${document.querySelectorAll("input")[0].value}`;
     return true
 }
 
 function femenino() {
-    let nombre1 = Math.round(Math.random()* titulos_femenino.length -1);
-    let nombre2 = Math.round(Math.random()* adjetivos.length -1);
-    let nombre3 = Math.round(Math.random()* sustantivos.length -1);
-    document.querySelectorAll("input")[0].value = `${titulos_masculino[nombre1]} ${adjetivos[nombre2]} ${sustantivos[nombre3]}`;
+    let nombre1 = Math.round(Math.random()* (titulos_femenino.length -1));
+    let nombre2 = Math.round(Math.random()* (adjetivos.length -1));
+    let nombre3 = Math.round(Math.random()* (sustantivos.length -1));
+    document.querySelectorAll("input")[0].value = `${titulos_femenino[nombre1]} ${adjetivos[nombre2]} ${sustantivos[nombre3]}`;
     document.cookie = `username = ${document.querySelectorAll("input")[0].value}`;
     return true
 }
